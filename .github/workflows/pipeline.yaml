@@ -44,11 +44,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:v1
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/student-task-manager:v1
+            ${{ secrets.DOCKERHUB_USERNAME }}/student-task-manager:latest
+
